@@ -1,0 +1,15 @@
+# Buf code generation config.
+#
+# Note: each consumer typically generates code in-tree:
+#   - Rust: tonic-build from build.rs in lymon-agent
+#   - TypeScript: ts-proto or @grpc/proto-loader in lymon-ingest-spike
+#
+# This file is provided for occasional integration testing or
+# inspection. Run `buf generate` from this repo root.
+
+version: v2
+plugins:
+  - remote: buf.build/protocolbuffers/js:v3.21.2
+    out: gen/js
+    opt:
+      - import_style=commonjs
